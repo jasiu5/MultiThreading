@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.concurrent.Semaphore;
 
-public class BuildingSynchronized implements Building{
+public class BuildingSemaphores implements Building{
 
     private final int lifts;
     private Semaphore mutex = new Semaphore(1, true);
@@ -10,7 +10,7 @@ public class BuildingSynchronized implements Building{
     private int liftUsage[];
     private boolean liftAvail[];
     private int numLiftsAvail;
-    public BuildingSynchronized(int numLifts) {
+    public BuildingSemaphores(int numLifts) {
         this.lifts = numLifts;
         this.liftUsage = new int[numLifts];
         this.liftAvail = new boolean[numLifts];

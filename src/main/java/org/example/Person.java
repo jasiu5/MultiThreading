@@ -15,7 +15,7 @@ public class Person extends Thread {
 
 	@Override
 	public void run() {
-		boolean broken = false; // To use for further functionalities
+		boolean broken = false;
 		try {
 			int liftId = b.boardOnLift(id);
 			sleep(rnd.nextInt(500));

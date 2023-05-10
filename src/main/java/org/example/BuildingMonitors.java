@@ -3,12 +3,12 @@ package org.example;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BuildingMoniotrs implements Building {
+public class BuildingMonitors implements Building {
     private final int numLifts;
     private List<Integer> liftAvail = new LinkedList<>();
     private int liftUsage[];
 
-    public BuildingMoniotrs(int numLifts) {
+    public BuildingMonitors(int numLifts) {
         this.numLifts = numLifts;
         for(int i=0; i<numLifts; i++)
             this.liftAvail.add(i);
