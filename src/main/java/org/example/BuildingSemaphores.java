@@ -5,8 +5,8 @@ import java.util.concurrent.Semaphore;
 public class BuildingSemaphores implements Building{
 
     private final int lifts;
-    private Semaphore mutex = new Semaphore(1, true);
-    private Semaphore waitForLift = new Semaphore(1, true);
+    private final Semaphore mutex = new Semaphore(1, true);
+    private final Semaphore waitForLift = new Semaphore(1, true);
     private int liftUsage[];
     private boolean liftAvail[];
     private int numLiftsAvail;
@@ -22,7 +22,7 @@ public class BuildingSemaphores implements Building{
 
     private int getFirstFreeLift(){
         int i = 0;
-        while (this.liftAvail[i] != true){
+        while (!this.liftAvail[i]){
             i++;
         }
         if (i > lifts){
